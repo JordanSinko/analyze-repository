@@ -4,14 +4,13 @@
   "private": true,
   "author": "Jordan Sinko",
   "description": "GitHub action to scan repository using Sonar Scanner",
-  "main": "lib/main.js",
+  "main": "lib/index.js",
   "scripts": {
     "build": "tsc",
-    "format": "prettier --write **/*.ts",
-    "format-check": "prettier --check **/*.ts",
-    "package": "esbuild lib/main.js --outdir=dist --platform=node --target=es2019 --format=cjs --sourcemap --bundle --minify",
+    "format": "pretty-quick --staged",
+    "package": "esbuild lib/index.js --outdir=dist --platform=node --target=es2019 --format=cjs --sourcemap --bundle --minify",
     "test": "jest",
-    "all": "npm run build && npm run format && npm run lint && npm run package && npm test"
+    "all": "npm run build && npm run format && npm run package && npm test"
   },
   "repository": {
     "type": "git",
